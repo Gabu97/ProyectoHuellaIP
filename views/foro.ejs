@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HAPPYPAW</title>
+    <link rel="stylesheet" type="text/css" href="../../static/styleespacios.css">
+    <link rel="shortcut icon" href="../../static/Fotos/LOGO_ARCOIRIS.png">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <a href="/inicio"><img src="../../static/Fotos/LOGO_ARCOIRIS.png" width="50px" height="50px">HappyPaw</a>
+        </div>
+
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="menu-icon__line"></span>
+        </label>
+        <ul class="nav-links">
+            <li class="nav-link">
+                <a href="/inicio">Inicio</a>
+            </li>
+            <li class="nav-link">
+                <a href="/inicio">Conócenos</a>
+            </li>
+
+            <li class="nav-link">
+                <a href="/contact">Contáctanos</a>
+            </li>
+        </ul>
+
+        <%if (login) {%>
+            <a href="">BIENVENIDO: <strong>
+                    <%= name%>
+                </strong> </a>
+            <a href="/logout">Desconectarse</a>
+            <%}else{%>
+                <a class="nav-link nav-links" href="/login">
+                    <%= name%>
+                </a>
+            <%}%>
+
+    </header>
+
+    <div class="container mt-5 justify content center" id="espacios" >
+        <div class="row">
+            <div class="col-xl-12">
+                <table class="table table-bordered table-hover" id="tabla">
+                    <thead>
+                        <br>
+                        <td id="que">Usuario</td>
+                        <td id="que">Pregunta</td>
+                        <td id="que">Respuesta</td>
+                        <td id="que"></td>
+                    </thead>
+                    <tbody>
+                        <% if (data) { %>
+                            <% for(var i=0; i < data.length; i++) { %>
+                                <tr>
+
+                                    <td>
+                                        <%= data[i].usuario %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].pregunta %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].respuesta %>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal" data-bs-whatever="@mdo">Responder</button>
+
+                                        <div class="modal fade" id="exampleModal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Respuesta</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form>
+                                                            <div class="mb-3">
+                                                                <label for="message-text"
+                                                                    class="col-form-label"></label>
+                                                                <h5> ¿ Puedo cortarles las uñas a mis gatos ? o ¿ Lo
+                                                                    llevo al veterinario ?</h5>
+                                                                <textarea class="form-control"
+                                                                    id="message-text"></textarea>
+                                                            </div>
+
+                                                            
+                                                        </form>
+                                                        
+                                                            
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary"
+                                                            data-bs-dismiss="modal" onclick="valoracion()">Enviar</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                <% } %>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="ctn">
+        <br/>
+        <a href="../inicio" id="noenlace" class="button2 b-green rot-135">INICIO</a>
+        <a href="../pipiplaya" id="noenlace" class="button2 b-green rot-135">PIPICAN Y PLAYA</a>
+        <a href="../valoraciones" id="noenlace" class="button2 b-green rot-135">VALORACIONES</a>
+        <a href="../blogs" id="noenlace" class="button2 b-green rot-135">BLOGS</a>
+        <a href="../locales" id="noenlace" class="button2 b-green rot-135">ESTABLECIMIENTOS</a>
+        </div>
+        <br/>
+        <br/>
+
+
+    <%- include ('./partials/footer') %>
+        <!-- <div class="fondo">
+        <ul class="lista">
+            Pregunta 1
+            <li class="pregunta" data-resp_id="resp_1">
+              <span>¿Dónde encuentro los pipicans cercanos a mi casa?</span>
+              <i class="ico_resp fas fa-angle-down"></i>
+            </li>
+            <li class="respuesta" id="resp_1">
+              <span id="sp_resp_1">¡Buenas! Diría que es en la casilla de pipicas y playas.</span>
+            </li> -->
+
+        <!-- Pregunta 2
+            <li class="pregunta" data-resp_id="resp_2">
+              <span>Hola! ¿Sabeis dónde podría vacunar a mi perro cerca de casa?</span>
+              <i class="ico_resp fas fa-angle-down"></i>
+            </li>
+            <li class="respuesta" id="resp_2">
+              <span id="sp_resp_2">Debería salirte en la sección de establecimientos</span>
+            </li>
+          </ul>
+    </div>
+
+</div>
+</div>
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary" id="boton"><a href="../locales">ESTABLECIMIENTOS</a></button>
+    <button type="button" class="btn btn-primary" id="boton"><a href="../pipiplaya">PIPICAN Y PLAYA</a></button>
+    <button type="button" class="btn btn-primary" id="boton"><a href="../foro">FORO</a></button>
+    <button type="button" class="btn btn-primary" id="boton"><a href="../valoraciones">VALORACIONES</a></button>
+    <button type="button" class="btn btn-primary" id="boton"><a href="../blogs">BLOGS</a></button>
+    <button type="button" class="btn btn-primary" id="boton"><a href="../inicio">INICIO</a></button>
+</div>
+</div>
+</div>
+<br>
+<br> -->
+
+        <%- include ('./partials/footer') %>

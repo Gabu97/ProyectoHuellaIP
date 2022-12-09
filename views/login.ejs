@@ -1,0 +1,77 @@
+<%- include('./partials/headerlogin.ejs') %>
+
+
+    <div class="block">
+
+        <div class="cont">
+
+
+            <div class="form sign-in">
+                <form action="/auth" method="post">
+
+                    <h2>Inicia sesión</h2>
+                    <label for="username">
+
+                        <input type="text" name="Usuario" placeholder="Usuario" id="username" required />
+                    </label>
+                    <label for="contras">
+
+                        <input type="password" name="Contras" placeholder="Contraseña" id="password" required />
+                    </label>
+
+                    <button type="submit" class="submit" value="Ingresar">
+                        Entrar
+                    </button>
+
+
+                </form>
+              
+            </div>
+            <div class="sub-cont">
+                <div class="img">
+                    <div class="img__text m--up">
+                        <h2>Nuevo por aquí?</h2>
+                        <p>Regístrate y descubre nuevas oportunidades</p>
+                    </div>
+                    <div class="img__text m--in">
+                        <h2>Ya eres uno de nosotros?</h2>
+                        <p>Si ya tienes una cuenta, inicia sesión! Te echabamos de menos</p>
+                    </div>
+                    <div class="img__btn">
+                        <span class="m--up">Regístrate</span>
+                        <span class="m--in">Entrar</span>
+                    </div>
+                </div>
+                <div class="form sign-up">
+                    <form action="/save" method="POST">
+
+                        <label class="form-group">
+                            <span>Nombre</span>
+                            <input type="text" name="Nombre" class="form-control" autofocus />
+                            <span>Apellidos</span>
+                            <input type="text" name="Apellidos" class="form-control" />
+                            <span>Email</span>
+                            <input type="text" name="Email" class="form-control" />
+                            <span>Usuario</span>
+                            <input type="text" name="Usuario" class="form-control">
+                            <span>Contraseña</span>
+                            <input type="password" name="Contras" class="form-control">
+                            <span>Teléfono</span>
+                            <input type="text" name="Teléfono" class="form-control">
+                            <span>Dirección</span>
+                            <input type="text" name="Dirección" class="form-control">
+                        </label>
+
+
+                        <button type="submit" class="submit">
+                            Registrarse
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <%- include('./partials/footerlogin.ejs') %>

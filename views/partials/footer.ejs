@@ -1,0 +1,121 @@
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="cta-text">
+                            <h4>Encuéntranos</h4>
+                            <span>Edifici Centre Esplai, Carrer del Riu Anoia, 44, 54, 08820 El Prat de Llobregat, Barcelona
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-phone"></i>
+                        <div class="cta-text">
+                            <h4>Llámanos</h4>
+                            <span>934747474</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="far fa-envelope-open"></i>
+                        <div class="cta-text">
+                            <h4>Email</h4>
+                            <span>exelixi@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+
+                            <a href="http://localhost:3000/"><img src="../../static/Fotos/LOGOcentronegro-removebg-preview.png" class="img-fluid" alt="logo"></a>
+
+                        </div>
+                        <div class="footer-text">
+                            <p>HAPPYPAW, plataforma dinámica para la interacción de usuarios y búsqueda de información sobre y para tus mascotas</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Links de interés</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#conocenos">Sobre nosotros</a></li>
+                            <li><a href="/locales">Establecimientos</a></li>
+                            <li><a href="/pipiplaya">Pipicans y playas</a></li>
+                            <li><a href="/contact">Contacto</a></li>
+                            <li><a href="/foro">Foro</a></li>
+                            <li><a href="/blogs">Blogs y consejos</a></li>
+                            <li><a href="/valoraciones">Reseñas y valoraciones</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <%if (login) {%>
+                                    <h3>Gracias por ser parte de nuestra comunidad  <strong><%= name%></strong></h3>          
+                            <%}else{%>                              
+                                  <a href="/login"><h3>Únete a nosotros</h3></a>                                
+                            <%}%>
+                            
+                        </div>
+                        <div class="footer-text mb-25">
+                            <p>No olvides subscribirte !</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="Email Address">
+                                <button><i class="fab fa-telegram-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2022, All Right Reserved <a href="#">Exelixi</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#inicio">Home</a></li>
+                            <li><a href="#">Términos</a></li>
+                            <li><a href="#">Privacidad</a></li>
+                            <li><a href="#">Política</a></li>
+                            <li><a href="/contact">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+<script src="../../static/index.js"></script>
+</body>
+</html>

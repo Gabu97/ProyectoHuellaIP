@@ -1,0 +1,88 @@
+<%- include('./partials/headercontact.ejs') %>
+
+    <div class="containercontact">
+        <h1 id="contactanos">CONTACTA CON NOSOTROS</h1>
+        <div class="containcont">
+            <form action="/inicio" name="contactForm" onsubmit="return validateForm()" method="get">
+
+                <div class="row" id="border">
+                    <div class="col-xl-4" id="cont">
+                        <label>Nombre</label>
+                    </div>
+                    <div class="col-xl-8" id="cont">
+                        <input id="idName" type="text" name="name" onblur="validateText(30)" class="inputrespuesta"
+                            placeholder="...">
+                        <div class="error" id="nameErr"></div>
+                        <div class="noerror" id="nameNoErr"></div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xl-4" id="cont">
+                        <label>Teléfono</label>
+                    </div>
+                    <div class="col-xl-8" id="cont">
+                        <input type="text" name="mobile" onblur="validatePhone()" maxlength="9" class="inputrespuesta"
+                            placeholder="...">
+
+                        <div class="error" id="mobileErr"></div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xl-4" id="cont">
+                        <label>Correo electrónico</label>
+                    </div>
+                    <div class="col-xl-8" id="cont">
+                        <input type="text" name="email" onblur="validateEmail()" class="inputrespuesta"
+                            placeholder="...">
+                        <div class="error" id="emailErr"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col" id="cont">
+                        <label>Escribe tu mensaje</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="cont">
+                        <input type="text" class="inputrespuestamnsj"><br>
+                    </div>
+                </div>
+                <div class="row" id="cont">
+                    <label>GRPD <i>*</i></label>
+                    <div class="form-inline">
+                        <label><input onchange="validateCheck()" type="checkbox" name="grpd" value="grpd">
+                            <small>Reglamento
+                                General de Protección de
+                                Datos, de obligado cumplimiento desde el 25 de mayo de 2018, es la armonización a nivel
+                                europeo,
+                                de las normativas de protección de datos, estableciendo además nuevas directrices y
+                                obligaciones
+                                respecto a la normativa anterior.</small></label>
+                        <div class="error" id="grpdErr"></div><br><br>
+
+                    </div>
+                    <br>
+                    <div>
+                        <input id="enviar" type="submit" value="Enviar" onclick="contactoenv();"><br><br>
+                    </div>
+                    <br>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <%- include('./partials/footer.ejs') %>

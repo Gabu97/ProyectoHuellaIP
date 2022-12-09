@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HAPPYPAW</title>
+    <link rel="stylesheet" type="text/css" href="../../static/styleespacios.css">
+    <link rel="shortcut icon" href="../../static/Fotos/LOGO_ARCOIRIS.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <a href="/inicio"><img src="../../static/Fotos/LOGO_ARCOIRIS.png" width="50px" height="50px">HappyPaw</a>
+        </div>
+
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="menu-icon__line"></span>
+        </label>
+        <ul class="nav-links">
+            <li class="nav-link">
+                <a href="/inicio">Inicio</a>
+            </li>
+            <li class="nav-link">
+                <a href="/inicio">Conócenos</a>
+            </li>
+
+            <li class="nav-link">
+                <a href="/contact">Contáctanos</a>
+            </li>
+        </ul>
+
+        <%if (login) {%>
+            <a href="">BIENVENIDO: <strong>
+                    <%= name%>
+                </strong> </a>
+            <a href="/">Desconectarse</a>
+            <%}else{%>
+                <a class="nav-link nav-links" href="/login">
+                    <%= name%>
+                </a>
+                <%}%>
+
+    </header>
+
+    <div id="fondoval">
+        <div class="row row-cols-2 row-cols-xl-3 g-4" id="valoraciones">
+            <div class="col">
+                <div class="card">
+                    <img src="../static/Fotos/elcas.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Centro veterinario El Castell</h5>
+                        <div class="rating-css">
+                            <div class="rating-css-top" style="width: 72%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="rating-css-bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                        <div id="app">
+
+
+                            <p class="card-text">Buscaba un Centro Veterinario cerca de mi zona dónde atendieran a mis
+                                dos perritas Kyra y Dana y debo decir qué estoy encantada con el trato recibido tanto
+                                por parte de la veterinara qué les atiende que és muy atenta, cariñosa y buena
+                                profesional, como de la peluquera Montse qué és un encanto.
+                                Sin duda lo recomiendo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="../static/Fotos/elpoel.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Centro veterinario Poal</h5>
+                        <div class="rating-css">
+                            <div class="rating-css-top" style="width: 72%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="rating-css-bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                        <p class="card-text">I've been coming here with my cat since I moved to Castelldefels, the
+                            prices are slightly over average, but the attention to customer and care for the pets it's
+                            outstanding.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="../static/Fotos/vets.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Clínica Veterinaria VETS</h5>
+                        <div class="rating-css">
+                            <div class="rating-css-top" style="width: 72%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="rating-css-bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Vam anar d'urgències i van atendre molt bé al Beto. El nostre gosset
+                            estimat.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="../static/Fotos/vetvida.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Vet Vida</h5>
+                        <div class="rating-css">
+                            <div class="rating-css-top" style="width: 72%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="rating-css-bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Este fin de semana estuvo en vuestras manos en observación. Ella ha vuelto
+                            con mas fuerzas que nunca por vuestra buena acción. Enhorabuena por vuestra profesionalidad,
+                            dedicación y compromiso. Cuba os manda un lametón de agradecimiento</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="../static/Fotos/pipi1.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pipican Parc Muntanyeta</h5>
+                        <div class="rating-css">
+                            <div class="rating-css-top" style="width: 72%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="rating-css-bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                        <p class="card-text">El parc de la Muntanyeta es uno de los focos verdes de Castelldefels. Tiene
+                            una zona arbolada que ha mejorado por "obra" del ayuntamiento, el pipican le ha sumado vida
+                            y haber quitado las mesas donde se juntaba gente "indeseable" ha hecho del sitio un lugar
+                            más bucolico. Tiene una zona con parque infantil, la mayor parte del terreno es de tierra.
+                            En la zona más alta hay canchas de futbol, basket, mesas de pingpong y algunos juegos más
+                            para niños/adultos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="../static/Fotos/pipi2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Correcan</h5>
+                        <div class="rating-css">
+                            <div class="rating-css-top" style="width: 72%">
+                                <span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="rating-css-bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Lugar de esparcimiento y para la socialización de perros. Es amplio,
+                            dispone de bancos y papeleras. La zona de pinos es muy útil en verano. Cuando anochece está
+                            muy oscuro. Lo peor, el incivismo de algunos propietarios, no recogen las heces de sus
+                            mascotas, una lástima!!!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="../static/Fotos/playaperro.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Playa canina El Masnou</h5>
+                        <div class="rating-css">
+                            <div class="rating-css-top" style="width: 72%">
+                                <span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="rating-css-bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Genial para pasar el día con perros. No es muy amplia. Buen ambiente.
+                            Para acceder mejor ir al principio o final de la playa por donde hay escaleras. Y caminar a
+                            lo largo de la playa porque la bajada por las rocas es difícil.
+                            Lo malo es el aparcamiento.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="../static/Fotos/playa2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Platja Pere Grau</h5>
+                        <div class="rating-css">
+                            <div class="rating-css-top" style="width: 72%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="rating-css-bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Cala para perros, limpia, de piedras, muy bonita, perfecta para refrescarse
+                            los peludos, se lo pasaron genial, gracias al ayuntamiento por contar con los perros para
+                            que puedan refrescarse.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="../static/Fotos/kiwo.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Kiwoko</h5>
+                        <div class="rating-css">
+                            <div class="rating-css-top" style="width: 72%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="rating-css-bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Personal super amable, si tienes alguna duda te aconsejan siempre muy bien,
+                            son muy profesionales. Muchas gracias por vuestra atencion siempre!!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="../static/Fotos/agro.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Agronaturandia</h5>
+                        <div class="rating-css">
+                            <div class="rating-css-top" style="width: 72%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="rating-css-bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Portem al nostre bixó maltès a la perruqueria cada dos mesos
+                            aproximadament. Havíem provat altres llocs però o eren molt cars o no tenien paciència amb
+                            el nostre Timi. En canvi aquí, ell està bé, surt molt net i desenredat i no ens hem gastat
+                            una fortuna!! BBB 😍🤩</p>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+    </div>
+    <div class="ctn">
+
+        <br />
+        <a href="../inicio" id="noenlace" class="button2 b-green rot-135">INICIO</a>
+        <a href="../pipiplaya" id="noenlace" class="button2 b-green rot-135">PIPICAN Y PLAYA</a>
+        <a href="../foro" id="noenlace" class="button2 b-green rot-135">FORO</a>
+        <a href="../blogs" id="noenlace" class="button2 b-green rot-135">BLOGS</a>
+        <a href="../locales" id="noenlace" class="button2 b-green rot-135">ESTABLECIMIENTOS</a>
+    </div>
+    <br />
+    <br />
+
+    <%- include ('./partials/footer') %>
